@@ -161,7 +161,6 @@ tieScore1.appendChild(tieScoreDiv);
 
 const compPlay = document.querySelector('.compPlay');
 const compChoice = document.createElement('div');
-compChoice.classList.add('content');
 compChoice.textContent = ' ';
 compPlay.appendChild(compChoice);
 
@@ -169,7 +168,6 @@ compPlay.appendChild(compChoice);
 
 const result1 = document.querySelector('.result');
 const resultDiv = document.createElement('div');
-resultDiv.classList.add('content');
 resultDiv.textContent = ' ';
 result1.appendChild(resultDiv);
 
@@ -182,7 +180,6 @@ let tieScore = 0;
 
 const playScore = document.querySelector('.playerScore');
 const playScoreDiv = document.createElement('div');
-playScoreDiv.classList.add('content');
 playScoreDiv.textContent = '0';
 playScore.appendChild(playScoreDiv);
 
@@ -192,7 +189,6 @@ playScore.appendChild(playScoreDiv);
 
 const comScore = document.querySelector('.computerScore');
 const comScoreDiv = document.createElement('div');
-comScoreDiv.classList.add('content');
 comScoreDiv.textContent = '0';
 comScore.appendChild(comScoreDiv);
 
@@ -201,6 +197,29 @@ comScore.appendChild(comScoreDiv);
 
 const tieScore1 = document.querySelector('.tieScore');
 const tieScoreDiv = document.createElement('div');
-tieScoreDiv.classList.add('content');
 tieScoreDiv.textContent = '0';
 tieScore1.appendChild(tieScoreDiv);
+   
+
+
+const resetBtn = document.querySelector("#resetBtn");
+resetBtn.addEventListener("click", e => {
+    
+    compChoice.textContent = " ";
+    compPlay.appendChild(compChoice);
+
+    playScoreDiv.textContent = 0;
+    playScore.appendChild(playScoreDiv);
+    
+    comScoreDiv.textContent = 0;
+    comScore.appendChild(comScoreDiv);
+    
+    tieScoreDiv.textContent = 0;
+    tieScore1.appendChild(tieScoreDiv);
+    
+    
+        resultDiv.textContent = " ";
+        result1.appendChild(resultDiv);
+
+
+});
