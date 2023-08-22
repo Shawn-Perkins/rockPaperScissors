@@ -1,6 +1,6 @@
 
 
-game();
+//game();
 
 
 
@@ -92,3 +92,115 @@ function game(){
         console.log(scoreMessage);
     }
 }
+
+
+
+const rockBtn = document.querySelector("#rockBtn");
+rockBtn.addEventListener("click", e => {
+    playGame("rock");
+});
+
+
+
+const paperBtn = document.querySelector("#paperBtn");
+paperBtn.addEventListener("click", e => {
+    playGame("paper");
+});
+
+const scissorsBtn = document.querySelector("#scissorsBtn");
+scissorsBtn.addEventListener("click", e => {
+    playGame("scissors");
+});
+
+
+
+function playGame(playerChoice){
+
+    
+    let computerChoice = getComputerChoice();
+    let result = playRound(playerChoice, computerChoice);
+
+    compChoice.textContent = computerChoice;
+    compPlay.appendChild(compChoice);
+
+
+if(result == "Win"){
+    ++playerScore;
+}else if(result == "Lose"){
+    ++compScore;
+}else ( ++tieScore);
+
+playScoreDiv.textContent = playerScore;
+playScore.appendChild(playScoreDiv);
+
+comScoreDiv.textContent = compScore;
+comScore.appendChild(comScoreDiv);
+
+tieScoreDiv.textContent = tieScore;
+tieScore1.appendChild(tieScoreDiv);
+
+
+    resultDiv.textContent = result;
+    result1.appendChild(resultDiv);
+    // content.textContent = result;
+    // container.appendChild(content);
+    // //alert(result);co
+}
+
+
+
+// const container = document.querySelector('#container');
+// const content = document.createElement('div');
+// content.classList.add('content');
+// content.textContent = 'This is the glorious text-content!';
+
+// container.appendChild(content);
+
+
+//<div class="compPlay">
+
+const compPlay = document.querySelector('.compPlay');
+const compChoice = document.createElement('div');
+compChoice.classList.add('content');
+compChoice.textContent = ' ';
+compPlay.appendChild(compChoice);
+
+//<div class="result">
+
+const result1 = document.querySelector('.result');
+const resultDiv = document.createElement('div');
+resultDiv.classList.add('content');
+resultDiv.textContent = ' ';
+result1.appendChild(resultDiv);
+
+let playerScore = 0;
+let compScore = 0;
+let tieScore = 0;
+
+
+//<div class="playerScore">
+
+const playScore = document.querySelector('.playerScore');
+const playScoreDiv = document.createElement('div');
+playScoreDiv.classList.add('content');
+playScoreDiv.textContent = '0';
+playScore.appendChild(playScoreDiv);
+
+
+
+//<div class="computerScore">
+
+const comScore = document.querySelector('.computerScore');
+const comScoreDiv = document.createElement('div');
+comScoreDiv.classList.add('content');
+comScoreDiv.textContent = '0';
+comScore.appendChild(comScoreDiv);
+
+
+//<div class="tieScore">
+
+const tieScore1 = document.querySelector('.tieScore');
+const tieScoreDiv = document.createElement('div');
+tieScoreDiv.classList.add('content');
+tieScoreDiv.textContent = '0';
+tieScore1.appendChild(tieScoreDiv);
